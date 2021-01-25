@@ -4,6 +4,7 @@ import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 
 import {Nav,NavIcon,SidebarNav,SidebarWrap} from './styles'
+import Submenu from "../Submenu";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -18,14 +19,19 @@ const Sidebar = () => {
     <>
     <Nav>
       <NavIcon to="#  "> 
-        <FaIcons.FaBars onClick={showSidebar}/>
+        <FaIcons.FaBars color ="#FFF" onClick={showSidebar}/>
       </NavIcon>
     </Nav>
     <SidebarNav sidebar={sidebar}>
       <SidebarWrap>
       <NavIcon to="#  "> 
-        <AiIcons.AiOutlineClose onClick={showSidebar}/>
+        <AiIcons.AiOutlineClose  color ="#FFF" onClick={showSidebar}/>
       </NavIcon>
+
+      {/* passando os dados para criar os botões */}
+      {SidebarData.map((item,index) => {
+        return <Submenu item={item} key={index}/>
+      })}
       </SidebarWrap>
     </SidebarNav>
     </>

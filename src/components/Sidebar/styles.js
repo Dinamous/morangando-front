@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const Nav = styled.div`
-  background:#15171c;
-  height:80px;
+  background: #15171c;
+  height:60px;
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -12,7 +12,7 @@ export const Nav = styled.div`
 export const NavIcon = styled(Link)`
   margin-left:2rem;
   font-size:2rem;
-  height:80px;
+  height:60px;
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -30,6 +30,8 @@ export const SidebarNav = styled.nav`
   //se o botão for clicado (state == true), o valor altera
   transition:500ms ease-in-out ;
   z-index:10;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 export const SidebarWrap = styled.div`
